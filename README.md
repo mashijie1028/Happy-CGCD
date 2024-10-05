@@ -18,6 +18,18 @@ Codes will be released soon.
 
 
 
+## Acknowledgements :gift:
+
+In building the AGCD codebase, we reference [SimGCD](https://github.com/CVMI-Lab/SimGCD).
+
+
+
+## License :white_check_mark:
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mashijie1028/ActiveGCD/blob/main/LICENSE) file for details.
+
+
+
 ## Contact :email:
 
 If you have further questions or discussions, feel free to contact me:
