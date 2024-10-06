@@ -6,7 +6,7 @@ We study the under-explored setting of C-GCD as follows:
 
 ![diagram](assets/CGCD-setting.png)
 
-We introduce our method: **Happy**, which is characterized by **<u>H</u>**ardness-**<u>a</u>**ware **<u>p</u>**rototype sampling and soft entro**<u>py</u>** regularization, as follows:
+We introduce our method: **Happy**, which is characterized by <ins>H</ins>ardness-<ins>a</ins>ware <ins>p</ins>rototype sampling and soft entro<ins>py</ins> regularization, as follows:
 
 ![diagram](assets/Happy.png)
 
