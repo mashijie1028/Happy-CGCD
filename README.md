@@ -25,11 +25,7 @@ We conduct experiments on 6 dataset:
 
 Set paths to datasets in `config.py`
 
-
-
 ### 3. Stage-0: Offline Training
-
-Please specify the args `--train_sessio` as `offline`
 
 **CIFAR100**
 
@@ -43,9 +39,9 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cifar100' --batch_s
 CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 128 --transform 'imagenet' --lr 0.1 --memax_weight 2 --eval_funcs 'v2' --num_old_classes 100 --prop_train_labels 0.8 --train_session offline --epochs_offline 100 --continual_session_num 5 --online_novel_unseen_num 25 --online_old_seen_num 5 --online_novel_seen_num 5
 ```
 
+:warning: Please specify the args `--train_session` as `offline`
 
-
-### 4. Stage-1$\sim$T: Online Continual Training
+### 4. Stage-1 $\sim$ T: Online Continual Training
 
 **CIFAR100**
 
@@ -59,7 +55,7 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cifar100' --batch_s
 CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 128 --transform 'imagenet' --warmup_teacher_temp 0.05 --teacher_temp 0.05 --warmup_teacher_temp_epochs 10 --lr 0.01 --memax_old_new_weight 1 --memax_old_in_weight 1 --memax_new_in_weight 1 --proto_aug_weight 1 --feat_distill_weight 1 --radius_scale 1.0 --eval_funcs 'v2' --num_old_classes 100 --prop_train_labels 0.8 --train_session online --epochs_online_per_session 20 --continual_session_num 5 --online_novel_unseen_num 25 --online_old_seen_num 5 --online_novel_seen_num 5 --init_new_head --load_offline_id Old100_Ratio0.8_20240506-165445 --shuffle_classes --seed 0
 ```
 
-:warning: Please specify the args `--train_sessio` as `online`
+:warning: Please specify the args `--train_session` as `online`
 
 :warning: ​​Please change the args `--load_offline_id` according to offline training save path
 
