@@ -59,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 1
 
 :warning: ​​Please change the args `--load_offline_id` according to offline training save path
 
-:warning: Please keep the four args `--continual_session_num`, `--online_novel_unseen_num`, `--online_old_seen_num`, `--online_novel_seen_num` the same as offline training stage.
+:warning: Please keep the four args `--continual_session_num`, `--online_novel_unseen_num`, `--online_old_seen_num` and `--online_novel_seen_num` the same as offline training stage.
 
 
 
