@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 from torch.optim import SGD, lr_scheduler
 
-from project_utils.general_utils import set_seed, init_experiment, init_experiment_with_load_continual, AverageMeter
+from project_utils.general_utils import set_seed, init_experiment, AverageMeter
 from project_utils.cluster_and_log_utils import log_accs_from_preds
 
 from data.augmentations import get_transform
@@ -381,7 +381,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='cluster', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--batch_size', default=128, type=int)
     parser.add_argument('--num_workers', default=4, type=int)
-    parser.add_argument('--num_workers_test', default=0, type=int)
+    parser.add_argument('--num_workers_test', default=4, type=int)
     parser.add_argument('--eval_funcs', nargs='+', help='Which eval functions to use', default='v2')
 
     parser.add_argument('--dataset_name', type=str, default='cifar100', help='options: cifar10, cifar100, tiny_imagenet, cub, imagenet_100')
@@ -435,10 +435,6 @@ if __name__ == "__main__":
     parser.add_argument('--online_old_seen_num', default=50, type=int)
     parser.add_argument('--online_novel_seen_num', default=50, type=int)
 
-    # load train
-    parser.add_argument('--load_online_id', type=str, default=None)
-    parser.add_argument('--start_continual_session_num', default=0, type=int)
-
     # shuffle dataset classes
     parser.add_argument('--shuffle_classes', action='store_true', default=False)
     parser.add_argument('--seed', default=0, type=int)
@@ -461,7 +457,6 @@ if __name__ == "__main__":
 
     args.exp_root = args.exp_root + '_' + args.train_session
     args.exp_name = 'happy' + '-' + args.train_session
-    args.load_continual = (args.load_online_id is not None) and (args.start_continual_session_num > 0)   # NOTE!!! whether to load
 
     if args.train_session == 'offline':
         args.base_exp_id = 'Old' + str(args.num_labeled_classes) + '_' + 'Ratio' + str(args.prop_train_labels)
@@ -474,7 +469,7 @@ if __name__ == "__main__":
     else:
         raise NotImplementedError
 
-    init_experiment_with_load_continual(args, runner_name=['Happy'])
+    init_experiment(args, runner_name=['Happy'])
     args.logger.info(f'Using evaluation function {args.eval_funcs[0]} to print results')
 
     # ----------------------
@@ -598,25 +593,7 @@ if __name__ == "__main__":
         args.best_test_acc_seen_list = []
         args.best_test_acc_unseen_list = []
 
-        # load and continual
-        if args.load_continual:
-            start_session = args.start_continual_session_num-1
-            # prototypes
-            load_proto_aug_path = os.path.join(args.model_dir, 'ProtoAugDict' + '_session-' + str(args.start_continual_session_num-1) + f'.pt')   # NOTE!!!
-            args.logger.info('loading prototype augmentation dict checkpoints from: ' + load_proto_aug_path)
-            proto_aug_manager.load_proto_aug_dict(load_proto_aug_path)
-            # results list
-            load_results_path = os.path.join(args.model_dir, 'best_acc_list' + '_session-' + str(args.start_continual_session_num-1) + f'.pt')   # NOTE!!!
-            args.logger.info('loading results (best acc list) from: ' + load_results_path)
-            load_best_acc_list_dict = torch.load(load_results_path)
-            args.best_test_acc_all_list = load_best_acc_list_dict['best_test_acc_all_list']
-            args.best_test_acc_old_list = load_best_acc_list_dict['best_test_acc_old_list']
-            args.best_test_acc_new_list = load_best_acc_list_dict['best_test_acc_new_list']
-            args.best_test_acc_soft_all_list = load_best_acc_list_dict['best_test_acc_soft_all_list']
-            args.best_test_acc_seen_list = load_best_acc_list_dict['best_test_acc_seen_list']
-            args.best_test_acc_unseen_list = load_best_acc_list_dict['best_test_acc_unseen_list']
-        else:
-            start_session = 0
+        start_session = 0
 
         '''Continual GCD sessions'''
         #for session in range(args.continual_session_num):
