@@ -2,9 +2,11 @@
 
 Official implementation of our paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [NeurIPS 2024]**
 
-We study the under-explored setting of C-GCD as follows:
+We study the under-explored setting of continual generalized category discovery (C-GCD) as follows:
 
 ![diagram](assets/CGCD-setting.png)
+
+:bookmark: The core difference between C-GCD and class-incremental learning (CIL) is that C-GCD is unsupervised continual learning, while CIL is purely supervised. At each continual stage of C-GCD, unlabeled training data could contain both old and new classes.
 
 We introduce our method: **Happy**, which is characterized by <ins>H</ins>ardness-<ins>a</ins>ware <ins>p</ins>rototype sampling and soft entro<ins>py</ins> regularization, as follows:
 
@@ -16,7 +18,7 @@ We introduce our method: **Happy**, which is characterized by <ins>H</ins>ardnes
 
 ### 1. Datasets
 
-We conduct experiments on 6 dataset:
+We conduct experiments on 6 datasets:
 
 * Generic datasets: CIFAR-100, TinyImageNet and ImageNet-100
 * Fine-grained datasets: [CUB](https://drive.google.com/drive/folders/1kFzIqZL_pEBVR7Ca_8IKibfWoeZc3GT1), [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html), [FGVC-Aircraft](https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/)
@@ -86,3 +88,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 If you have further questions or discussions, feel free to contact me:
 
 Shijie Ma (mashijie2021@ia.ac.cn)
+
