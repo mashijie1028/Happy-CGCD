@@ -1,6 +1,6 @@
 # Happy: A Debiased Learning Framework for Continual Generalized Category Discovery
 
-Official implementation of our paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [NeurIPS 2024]**
+Official implementation of our NeurIPS 2024 paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [[arXiv]](https://arxiv.org/abs/2410.06535)**
 
 We study the under-explored setting of continual generalized category discovery (C-GCD) as follows:
 
@@ -59,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 1
 
 :warning: Please specify the args `--train_session` as `online`
 
-:warning: ​​Please change the args `--load_offline_id` according to offline training save path
+:warning: Please change the args `--load_offline_id` according to offline training save path
 
 :warning: Please keep the four args `--continual_session_num`, `--online_novel_unseen_num`, `--online_old_seen_num` and `--online_novel_seen_num` the same as offline training stage.
 
@@ -88,4 +88,3 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 If you have further questions or discussions, feel free to contact me:
 
 Shijie Ma (mashijie2021@ia.ac.cn)
-
