@@ -67,7 +67,14 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 1
 
 ## Citing this work :clipboard:
 
-TODO.
+```bibtex
+@article{ma2024happy,
+  title={Happy: A Debiased Learning Framework for Continual Generalized Category Discovery},
+  author={Ma, Shijie and Zhu, Fei and Zhong, Zhun and Liu, Wenzhuo and Zhang, Xu-Yao and Liu, Cheng-Lin},
+  journal={arXiv preprint arXiv:2410.06535},
+  year={2024}
+}
+```
 
 
 
