@@ -27,7 +27,7 @@ We conduct experiments on 6 datasets:
 
 Set paths to datasets in `config.py`
 
-### 3. Stage-0: Offline Training
+### 3. Stage-0: Labeled Training
 
 **CIFAR100**
 
@@ -43,7 +43,7 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 1
 
 :warning: Please specify the args `--train_session` as `offline`
 
-### 4. Stage-1 $\sim$ T: Online Continual Training
+### 4. Stage-1 $\sim$ T: Continual Training
 
 **CIFAR100**
 
