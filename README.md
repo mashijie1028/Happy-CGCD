@@ -1,6 +1,6 @@
 # Happy: A Debiased Learning Framework for Continual Generalized Category Discovery
 
-Official implementation of our NeurIPS 2024 paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [[arXiv]](https://arxiv.org/abs/2410.06535)**
+Official implementation of our NeurIPS 2024 paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [[arXiv]](https://arxiv.org/abs/2410.06535)[[NeurIPS 2024]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5ae0f7cfd65d8e2b39da4177fef82015-Abstract-Conference.html)**
 
 We study the under-explored setting of continual generalized category discovery (C-GCD) as follows:
 
