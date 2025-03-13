@@ -193,9 +193,8 @@ def get_class_splits(args):
             args.unlabeled_classes = range(100, 200)
 
         if args.num_old_classes > 0:
-            full_classes = args.train_classes + args.unlabeled_classes
-            args.train_classes = full_classes[:args.num_old_classes]
-            args.unlabeled_classes = full_classes[args.num_old_classes:]
+            args.train_classes = range(args.num_old_classes)
+            args.unlabeled_classes = range(args.num_old_classes, 200)
 
 
     elif args.dataset_name == 'scars':
@@ -218,9 +217,8 @@ def get_class_splits(args):
             args.unlabeled_classes = range(98, 196)
 
         if args.num_old_classes > 0:
-            full_classes = args.train_classes + args.unlabeled_classes
-            args.train_classes = full_classes[:args.num_old_classes]
-            args.unlabeled_classes = full_classes[args.num_old_classes:]
+            args.train_classes = range(args.num_old_classes)
+            args.unlabeled_classes = range(args.num_old_classes, 196)
 
 
     elif args.dataset_name == 'aircraft':
@@ -242,10 +240,8 @@ def get_class_splits(args):
             args.unlabeled_classes = range(50, 100)
 
         if args.num_old_classes > 0:
-            full_classes = args.train_classes + args.unlabeled_classes
-            args.train_classes = full_classes[:args.num_old_classes]
-            args.unlabeled_classes = full_classes[args.num_old_classes:]
-
+            args.train_classes = range(args.num_old_classes)
+            args.unlabeled_classes = range(args.num_old_classes, 100)
 
 
     elif args.dataset_name == 'herbarium_19':
