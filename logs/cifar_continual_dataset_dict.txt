@@ -1,0 +1,8 @@
+online_dataset_split_dict: 
+{'continual_session_num': 5, 'online_novel_unseen_num': 400, 'online_old_seen_num': 25, 'online_novel_seen_num': 25}
+novel_targets_shuffle: 
+[78 61 60 91 52 77 88 81 72 54 83 85 76 84 68 57 64 95 98 79 65 80 82 66
+ 92 70 93 58 63 75 55 67 90 99 51 62 87 74 56 73 86 71 69 59 89 96 53 50
+ 97 94]
+num_novel_class_per_session: 
+10
