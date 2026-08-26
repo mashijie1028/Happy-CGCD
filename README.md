@@ -2,15 +2,19 @@
 
 Official implementation of our NeurIPS 2024 paper: **Happy: A Debiased Learning Framework for Continual Generalized Category Discovery [[arXiv]](https://arxiv.org/abs/2410.06535)[[NeurIPS2024]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5ae0f7cfd65d8e2b39da4177fef82015-Abstract-Conference.html)**
 
+The extended version has been accepted to IEEE TPAMI: **Happy++: Towards Stable and Unified Continual Generalized Category Discovery [[arXiv]](https://www.techrxiv.org/doi/full/10.36227/techrxiv.177162683.31463217/v1)[[TPAMI2026]](https://ieeexplore.ieee.org/document/11644319)**
+
+
+
 We study the under-explored setting of continual generalized category discovery (C-GCD) as follows:
 
-![diagram](assets/CGCD-setting.png)
+![diagram](/assets/CGCD-setting.png)
 
 :bookmark: The core difference between C-GCD and class-incremental learning (CIL) is that C-GCD is unsupervised continual learning, while CIL is purely supervised. At each continual stage of C-GCD, unlabeled training data could contain both old and new classes.
 
 We introduce our method: **Happy**, which is characterized by <ins>H</ins>ardness-<ins>a</ins>ware <ins>p</ins>rototype sampling and soft entro<ins>py</ins> regularization, as follows:
 
-![diagram](assets/Happy.png)
+![diagram](/assets/Happy.png)
 
 
 
@@ -75,6 +79,16 @@ CUDA_VISIBLE_DEVICES=0 python train_happy.py --dataset_name 'cub' --batch_size 1
   title = {Happy: A Debiased Learning Framework for Continual Generalized Category Discovery},
   volume = {37},
   year = {2024}
+}
+```
+
+```bibtex
+@article{ma2026happy++,
+  title={Happy++: Towards Stable and Unified Continual Generalized Category Discovery},
+  author={Ma, Shijie and Zhu, Fei and Guo, Yuxin and Wang, Meng and Liu, Wenzhuo and Zhong, Zhun and Zhang, Xu-Yao and Liu, Cheng-Lin},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2026},
+  publisher={IEEE}
 }
 ```
 
